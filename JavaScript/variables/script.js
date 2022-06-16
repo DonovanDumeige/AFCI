@@ -217,3 +217,98 @@ console.log(a1.length);
 // il faudra indiquer -1 car .length retourne une valeur non comprise par le tableau
 // ici .length retourne 3 mais l'indexation du tableau s'arrête à 2.
 console.log(a1[a1.length-1]);
+
+/*
+Cette façon de faire ne copie pas le tableau mais seulement
+l'adresse à laquelle se trouve le tableau dans notre ordinateur
+*/
+let a4=a1;
+
+console.log(a4);
+a4.push("Super tableau!");
+// En modifier un, modifie les deux.
+console.log (a1,a4);
+// En utilisant la syntaxe de décomposition (spread operator)
+// le tableau est copié élément par élément dans un nouveau tableau
+let a5 = [...a1];
+a5.push("Super clone !")
+//ici mes deux tableaux sont différents
+console.log(a1,a5);
+// le spread operator décompose mon tableau en différents éléments séparé d'une virgule
+console.log(...a5);
+// j'ajoute les valeurs de mon tableau a5 dans un autre tableau.
+// j'insère les éléments de a5 entre les éléments a7.
+let a7 = ["Pizza", ...a5, "Pomme", "Banane"];
+console.log(a7);
+
+let a8 = ["Pizza", a5, "Pomme", "Banane"];
+// Sans le spread operator, on se retrouve avec un tableau multidimensionnel
+console.log(a8);
+// Ici je sélectionne mon élément à l'index 1 qui est un autre tableau
+// puis l'élément à la position 5 de ce second tableau
+console.log(a8[1][5]);
+let a9=[[[[[["Coucou"]]]]]];
+// On peut avoir autant de tableau que l'on souhaite les uns dans les autres.
+console.log(a9[0][0][0][0][0][0]);
+
+
+//* ------------------------ LES OBJETS ------------------------
+let o1 = {nom : "dupont", age : 45,  loisir:["bowling","mahjong"]};
+/* 
+Un objet JavaScript ressemble à un tableau, mais utilise des {} au lieu des []
+L'autre différence principale sera l'utilisation de mots pour indexer les valeurs
+au lieu des chiffres.
+*/
+console.log(o1);
+/* Pour sélectionner une propriété de mon objet, je peux appeler mon objet suivi
+d'un point puis du nom de ma propriété
+*/
+console.log(o1.nom);
+// Ou alors l'appeler comme je sélectionner un élément de mon tableau.
+console.log(o1["age"]);
+console.log(o1["loisir"][0], o1.loisir[0]);
+
+let o2 = {vegetal: {légume: {haricot: {couleur:"vert"}}}};
+
+console.log(o2.vegetal.légume.haricot.couleur);
+
+// là aussi on ne copie pas l'objet mais seulement son adresse
+let o3 = o1;
+console.log(o1);
+// donc en lui ajoutant une nouvelle valeur
+o3.signe="balance"
+// on vient aussi changer l'original
+console.log(o3, o1);
+
+// avec le spread operator, on décompose notre objet dans un nouvel objet
+let o4 = {...o1};
+console.log(o4);
+// en changeant sa valeur, mes deux objets sont bien différents
+o4.signe="scorpion";
+console.log(o4,o1);
+
+// Je transforme un tableau en objet
+console.log({...a1});
+//console.log([...o1]); ne fonctionne pas dans le sens inverse.
+
+o4.yeux="vert";
+// fusionne deux objets, les propriétés différentes sont ajoutées, mais si une propriété
+// est en commun, alors ce sera la valeur du dernier objet qui sera gardé.
+let o5={...o4, ...o1};
+console.log(o5);
+
+//* ------------------------- BOOLEAN -------------------------
+let b1 = true, b2 = false;
+// un booléen ne peut avoir que deux valeurs : true ou false;
+console.log("b1: ",b1,"b2: ",b2);
+
+//Mais on peut en faire apparaitre de plein de façon :
+console.log("1 < 2", 1<2);
+console.log("1 > 2", 1>2);
+console.log("1 >= 2", 1>=2);
+console.log("1 <= 2", 1<=2);
+console.log("1 == '1'", 1=='1');
+console.log("1 === '1'", 1==='1');
+console.log("1 != '1'", 1!='1');
+console.log("1 !== '1'", 1!=='1');
+console.log("!b1", !b1, "!b2", !b2);
