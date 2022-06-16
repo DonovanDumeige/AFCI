@@ -1,0 +1,139 @@
+/* On indique le sélecteurcss, puis on vous les accolades et dans celles ci on indique 
+les différentes propriétésque l'on donne à notre cible. */
+
+/* *Les propriétés CSS sont écrites comme telle :
+* un nom puis ":" sa valeur, puis ";" 
+* nom:valeur; */
+main{
+    background-color: chartreuse;
+}
+
+footer{
+    background-color: darkolivegreen !important;
+}
+
+/* !important vagarder la priorité absolue sur toute autre propriété 
+! evitez de l'utiliser à tout va */
+/*------------ Enfant direct ou indirect ------------- */
+main p{
+    background-color: olivedrab;
+}
+/* On sélectionne tous les p du site se trouvant
+dans un main, peu importe si d'autres balises les 
+séparent */
+
+main>p{
+    background-color:green;
+}
+/* On sélectionne uniquement les p se trouvant directement dans main
+sans balise les séparants */
+
+
+/*----------------Frère direct ou indirect--------------- */
+h3~li{
+    background-color: peachpuff;
+}
+h3+li{
+    /* sélectionne le premier li qui suit h3 */
+    background-color:aquamarine;
+}
+
+/* ---------------------- Les psuedo classes -------------- */
+/* *Les psuedo classes, sont écrites de la manière
+*suivante, :nom; */
+li:hover{
+    /* modifie l'élement au survol de la souris */
+    background-color: yellow;
+}
+li:nth-of-type(3){
+    /* Sélectionne le 3ème li */
+    /* existe aussi en partant de la fin avec
+    :nth-last-child */
+    background-color: azure;
+}
+li:nth-last-child(1){
+    color:orangered;
+    background-color: pink;
+}
+
+h1 a{
+    color: brown;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 a:active{
+    color: darkorange
+}
+
+h1 a:visited{
+    color:yellow
+}
+
+p span:not(:nth-of-type(2)){
+    /* :not indique "applique la règle pour tous sauf" */
+    color:aquamarine;
+}
+
+*:not(h1, a){
+    font-size:20px;
+}
+
+/*------------------- Les psuedo éléments --------------------- */
+/* *Les psuedo éléments sont écrits de la manière suivante ::nom */
+article p::first-letter{
+    /* modifie la première lettre de mon p contenu dans article */
+    font-size:50px;
+}
+
+main > p::first-line{
+    /* modifie la première ligne du p directement enfant de main */
+    font-weight: 900;
+}
+
+h1::before{
+    /* place un élément avant la cible */
+    content:"salut ->";
+    color:darkgoldenrod
+}
+
+h1::after{
+    /* place un élément après la cible */
+    content: "<- tu bluffes Martoni !";
+    color:chocolate;
+}
+
+/* -------------------------- Classes, ID & attributs ------------------- */
+#MenuImportant{
+font-size:2rem;
+font-weight: 700;
+color:darkcyan;
+}
+
+.peu-important{
+font-size: 35px;
+font-weight: 200;
+color:coral;
+}
+
+a[target]{
+    /* sélectionne tout les a qui possèdent l'attribut target */
+    font-style:italic
+}
+
+a[href*="amazon"]{
+    /* sélectionne tous les a dont l'attribut href contient "amazon" */
+    font-family:monospace;
+}
+
+a[href$=".fr"]{
+    /* sélectionne tous les a dont l'attribut href termine par ".fr" */
+    background-color:deepskyblue;
+}
+
+a[href^="https"]::before{
+    content:"✓ "
+}
+
+article p, li:nth-child(2), header p{
+    font-family:cursive;
+}

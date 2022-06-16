@@ -1,0 +1,48 @@
+/* **********Approche mobile-first ******* */
+body{
+    background-color: grey;
+    margin:0;
+}
+
+h1,h2{
+    text-align: center;
+}
+article{
+    margin:1rem 10px;
+    border:1px solid orangered;
+    padding: 0.5rem;
+}
+/* ********** Responsive design ********** */
+@media screen and (min-width: 500px){
+    body{
+        background-color:goldenrod;
+    }
+    article{
+        display:inline-block;
+        width:45%
+    }
+    
+}
+@media screen and (min-width:900px) {
+    body{
+        background-color: cadetblue;
+    }
+    article{
+        width:30%;
+    }
+}
+
+/* *Approche desktop-first, on commence par le plus grand. 
+* @media screen and (max-width: 900px) @media screen and
+* (max-width: 500px)
+*/
+
+@media print {
+    /* *En cas d'impression */
+    body{
+        background-color:brown;
+    }
+    footer{
+        display:none;
+    }
+}

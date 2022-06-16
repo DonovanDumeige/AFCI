@@ -1,0 +1,34 @@
+ul{
+    display:none ;
+}
+
+#burger:checked + ul{
+    display:block;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+h1{
+    font-size:1.5rem;
+}
+
+label{font-size: 1.2rem;}
+
+/* ****** To desktop ****** */
+@media screen and (min-width:600px) {
+  label{
+      display: none;
+  }  
+  ul{
+      display:block;
+  }
+
+  nav li{
+      display:inline-block;
+      width:17vw;
+      list-style: none;
+      text-align: center;
+  }
+  }

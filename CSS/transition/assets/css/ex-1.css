@@ -1,0 +1,187 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background-color: lightgrey
+}
+
+nav {
+    width: 50%;
+}
+
+ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul li {
+    list-style-type: none;
+    display: block;
+    margin: 5rem auto;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+}
+
+button span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    font-weight: bolder;
+
+
+    /* ** PREMIER BOUTON ** */
+}
+
+li:nth-child(1) button {
+    color: darkgrey;
+    border: 3px solid darkgrey;
+    background-color: unset;
+    transition-property: border-color, color, background-color, transform;
+    transition-duration: .5s, .5s, .5s, 1.5s;
+    transform: rotate(0deg);
+}
+
+li:nth-child(1) button:hover {
+    color: darkred;
+    border: 3px solid darkred;
+    background-color: rgba(255, 0, 0, .2);
+    transform: rotateY(1turn);
+    transition-property: border-color, color, background-color;
+    transition-duration: 2s;
+}
+
+/* ** SECOND BOUTON */
+li:nth-child(2) button {
+    color: white;
+    background-color: rgb(219, 6, 73);
+    border-radius: 10px;
+    padding: 0.75rem 1.2rem;
+    text-align: center;
+    position: relative;
+    top: -5px;
+    box-shadow: 6px 6px 5px grey;
+    border-color: transparent;
+    transition-property: top box-shadow, transform;
+    transition-duration: 0.2s, 0.2s, 1s;
+}
+
+li:nth-child(2) button:hover {
+    box-shadow: 3px 3px 5px grey;
+    top: 5px;
+}
+
+li:nth-child(2) button:active {
+    transform: rotateX(1turn);
+}
+
+
+/*  ** 3EME BOUTON */
+li:nth-child(3) button {
+    background-color: orangered;
+    color: white;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.5s;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+}
+
+li:nth-child(3) button span {
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    margin: 0.3rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+
+li:nth-child(3) button:hover {
+    border: 2px solid white;
+}
+
+li:nth-child(3) button:hover span {
+    color: orangered;
+    background-color: white;
+    border-radius: 50%;
+    transform: rotate(-360deg);
+}
+
+/* **4EME BOUTON */
+li:nth-child(4) button {
+    border-color: transparent;
+    background-color: transparent;
+    position: relative;
+    padding: 0.1rem;
+    text-align: center;
+    line-height: 2.5rem;
+    color: #6709c6;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+li:nth-child(4) button::after,
+li:nth-child(4) button::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    border-top: 3px solid #6709c6;
+    transition-property: width;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+li:nth-child(4) button::before {
+    top: -3px;
+    left: 0;
+}
+
+li:nth-child(4) button::after {
+    bottom: -3px;
+    right: 0px;
+}
+
+
+li:nth-child(4) button:hover {
+    color: #000;
+}
+
+li:nth-child(4) button:hover::before,
+li:nth-child(4) button:hover::after {
+    width: 100%;
+}
+
+li:nth-child(4) button:active {
+    color: #d408d6;
+}
+
+li:nth-child(4) button:active::before,
+li:nth-child(4) button:active::after {
+    border-color: #d408d6;
+}

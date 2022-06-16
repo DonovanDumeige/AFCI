@@ -1,0 +1,117 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: monospace;
+    height:100vh;
+    display:grid;
+    grid-template-columns: 12vw 1fr 3vw;
+    grid-template-rows: 50px 3fr 50px;
+    grid-template-areas: 
+    "header header header"
+    "aside main blank"
+    "footer footer footer";
+}
+
+header{
+    background-color:brown;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    grid-area: header;
+    font-size:1.5rem;
+    line-height: 50px;
+}
+
+ul{
+    margin:0;
+    padding:0;
+    font-size: 1rem;
+    background-color: grey;
+    text-align: center;
+    grid-area:aside;
+    display: grid;
+    align-content: center;
+    grid-template : repeat(4,25%) /1fr;
+    grid-template-areas:"aside1" "aside2" "aside3" "aside4";
+}
+
+li:nth-child(1){
+    grid-area: aside1;
+}
+li:nth-child(2){
+    grid-area: aside2;
+}
+li:nth-child(3){
+    grid-area: aside3
+}
+li:nth-child(4){
+    grid-area: aside4;
+}
+article{
+    grid-area:main;
+}
+ul li{
+    padding: 55px 0;
+    list-style-type: none;
+}
+ul li a{
+    text-decoration: none;
+    color:black;
+}
+
+ul li a:hover{
+    color:white;
+    font-weight:600;
+}
+p{
+    line-height: 2;
+    padding: 15px 30px 0 25px;
+}
+
+footer{
+    background-color: black;
+    color:white;
+    text-align: center;
+    grid-area: footer;
+    line-height: 50px;
+    font-size:0.9rem;
+}
+
+.blank{
+    background-color: grey;
+    height:100%;
+    grid-area:blank;
+}
+
+@media screen and (max-width:900px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 5vh 5vh 1fr 5vh;
+        grid-template-areas: "header" "aside" "main" "footer";
+    }
+
+    ul{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: "aside1 aside2 aside3 aside4";
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+
+    body{
+        grid-template-rows: 7vh 1fr 1fr 7vh;
+    }
+    ul{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: "aside1" "aside2" "aside3" "aside4";
+        font-size:1rem;
+    }
+
+    ul li{
+        padding:20px 0;
+    }
+    
+}

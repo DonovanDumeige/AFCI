@@ -1,0 +1,104 @@
+*,
+::after,
+::before {
+    /* On met tous les paddings et margin à 0 
+    pour placer les éléments exactement comme 
+    on le souhaite sans subir les valeurs par 
+    défaut */
+    margin: 0;
+    padding: 0;
+    /* *par défaut, la largeur d'un élément ne
+    *prend en compte que la boite de contenu.
+    *En le paramétrant en border-box,la largeur 
+    *prend en compte jusqu'à sa bordure */
+    box-sizing: border-box;
+}
+
+header {
+    background-color: aqua;
+    /* indiquer une image de fond */
+    background-image: url(/CSS/box-sizing/assets/img/photo-3.jpg);
+    /* indique si l'image doit se répéter*/
+    background-repeat: no-repeat;
+    /* indique commentl'image se positionne sur le fond */
+    background-position: center;
+    /* quelle taille doit prendre l'image */
+    background-size: cover;
+}
+
+main {
+    background-color: blueviolet;
+}
+
+article {
+    /* paramètre la largeur */
+    width: 49%;
+    /* modifie le mode de placement. Ici il reste
+    block mais qui peut se mettre en ligne si il
+    y a de l'espace nécessaire */
+    display: inline-block;
+    /* On peut paramétrer la bordure point par point
+    avec tout un tas de paramètres. Ou alors tout résumer 
+    en un seul  */
+    border: 5px solid black;
+    /* paramètre les marges intérieures, entre la bordure 
+    et le contenu */
+    padding: 20px;
+    /* paramètre les marges extérieures, autour des articles. 
+    On peut indiquer top, bottom, left, right à margin ou regrouper 
+    les 4 valeurs.On les inscrit dans le sens horaire, la 1ère 
+    valeur désigne "top"*/
+    margin: 20px auto 20px 5px
+}
+
+h1{
+    text-align: center;
+    font-size:42px;
+    padding: 0.8em 0;
+    /* em est une valeur qui calcule la taille d'un élément par
+    à celle de la police d'écriture du parent */
+}
+
+p{
+    font-size:24px;
+}
+
+p::first-letter{
+    /* rem est valeur qui calcule la taille d'un élément
+    par celle de la police d'écriture de la racine,
+    en gros celle du navigateur. Et n'est donc pas
+    dépendant de la taille de la police de l'élément */
+    font-size:2rem;
+}
+footer {
+    background-color: chartreuse;
+    /* paramètre la hauteur */
+    min-height: 50px;
+}
+
+li{
+    list-style:none;
+    display:inline-block;background-color: brown;
+    color: bisque;
+    /* indiquer une largeur et une hauteur définie comme du 16:9, 4:3 etc. */
+    aspect-ratio: 1/1;
+    /* arrondir les angles d'une border. à 50% on obtient un cercle */
+    border-radius:50%;
+    padding: 1rem 5px;
+    margin-left:15%;
+}
+
+div {
+    /* vw = viewport width, correspond à 40% de la largeur du viewport*/
+    width:40vw;
+    /* vh = viewport height, correspond à 90% de la hauteur du viewport */
+    max-height:90vh;
+    margin: 5px auto;
+    overflow: hidden;
+}
+
+img{
+    max-width : 90%;
+    /* permet d'indiquer comment l'image remplit son parent */
+    object-fit: cover;
+}

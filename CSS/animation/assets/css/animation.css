@@ -1,0 +1,91 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* permet de créer les paramètres de l'animation */
+@keyframes cloud {
+    from{
+        right:0;
+        height:5px;
+        width:5px;
+    }
+    35%{
+        top:100vh;
+    }
+    70%{
+        top:200px;
+    }
+    80%{
+        width:50px; 
+        height:50px;
+    }
+    to{
+        right: 82vw;
+        height:250px;
+        width:250px;
+    }
+}
+
+@keyframes darkCloud {
+    0%{
+        background-color: grey;
+    }
+    50%{
+        background-color: white;
+    }
+    100%{
+        background-color: grey;
+    }
+}
+
+body{
+    height: 100vh;
+}
+.sky{
+    height: 100%;
+    background: linear-gradient(to right, #904E95, #E96443);
+}
+.cloud{
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    /* permet d'indiquer le nom du @keyframes à utiliser */
+    animation-name: cloud;
+    /* temps alloué à l'animation */
+    animation-duration: 7s;
+    /* le sens de l'animation
+    normal = sens défini dans @keyframes 
+    reverse = sens inverse de celui définit dans @keyframes
+    alternate = fait un aller-retour dans le sens normal
+    alternate-reverse = aller-retour dans le sens inverse*/
+    animation-direction: alternate;
+    /* le rythme de l'animation */
+    animation-timing-function: ease-out;
+    /* le délai avant de commencer l'animation */
+    animation-delay: 0.5s;
+    /* combien de fois doit se jouer à l'animation */
+    animation-iteration-count: 1;
+}
+.cloud div{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    /* animation permet de regrouper toutes les propriétés animation */
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: darkCloud 5s linear infinite;
+}
+.part1{
+    top: -35%;
+}
+.part2{
+    left: 35%;
+}
+.part3{
+    left: -35%;
+}

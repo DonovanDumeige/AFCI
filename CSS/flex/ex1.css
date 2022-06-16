@@ -1,0 +1,180 @@
+/* *******GENERAL****** */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Cacher l'ascenseur du body */
+    overflow: hidden;
+
+}
+
+#exo {
+    height: 100vh;
+    /* Cette propriété permet d'indiquer au scrolling
+    qu'il doit s'arrêter  sur certains points définis sur
+    les enfants */
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    /* ajout d'un ascenseur sur div */
+}
+
+section {
+    height: 100%;
+    scroll-snap-type: center;
+    /* indique au scroll de s'arrêter au centre
+    de section */
+}
+
+
+.color1 {
+    background-color: lightcoral;
+}
+
+.color2 {
+    background-color: lightblue;
+}
+
+.color3 {
+    background-color: lightgreen;
+}
+
+.color4 {
+
+    background-color: lightyellow;
+}
+
+.color5 {
+    background-color: brown;
+}
+
+.color6 {
+    background-color: darkblue;
+}
+
+.color7 {
+    background-color: darkgreen;
+}
+
+.color8 {
+    background-color: darkgoldenrod;
+}
+
+.color9 {
+    background-color: blueviolet
+}
+
+header {
+    background-color: lightcoral;
+}
+
+nav {
+    background-color: lightblue;
+}
+
+main {
+    background-color: lightgreen;
+}
+
+footer {
+    background-color: lightyellow;
+}
+
+/* ************ EXERCICE 1 ************** */
+
+.ex-1 {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid whitesmoke;
+    gap: 5px;
+    width: 100vw;
+}
+
+.ex-1 div {
+    width: 100%;
+}
+
+    /* ************ EXERCICE 2 *********** */
+
+    .ex-2{
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .ex-2 div{
+        width: 25%;
+    }
+
+    .ex-2 div:nth-child(5){
+        width:100%
+    }    
+
+/* ***************EXERCICE-3 ************* */
+.ex-3{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.ex-3 header{
+    width:100%;
+    height:20%;
+}
+
+.ex-3 nav{
+    width:200px;
+    height:60%;
+}
+
+.ex-3 main{
+    flex-grow:1;
+    height:60%;
+}
+
+.ex-3 footer{
+    width:100%;
+    height:20%;
+}
+/* ***************FORMAT TABLETTE ******** */
+
+@media screen and (max-width:900px) {
+    .ex-1 {
+        flex-wrap: wrap;
+    }
+
+    .ex-1 div {
+        width: 24%;
+    }
+
+    .ex-2 div{
+        width:50%;
+    }
+}
+    /* ********* FORMAT MOBILE ******** */
+
+    @media screen and (max-width:600px) {
+        .ex-1 div {
+            width: 49.5%;
+        }
+        .ex-2 div {
+            width:100%;
+        }
+        .ex-3{
+            flex-direction: column;
+        }
+
+        .ex-3 main{
+            height:40%;
+        }
+        .ex-3 nav{
+            width:100%;
+            order:1;
+            height:20%;
+        }
+        
+        .ex-3 footer{
+            order:2;
+        }
+
+    }
+

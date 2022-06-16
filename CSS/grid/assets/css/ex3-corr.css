@@ -1,0 +1,81 @@
+/* ******************* TILES ******************* */
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    font-size: 4rem;
+}
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 200px);
+    grid-template-areas:
+        "a a a b"
+        "a a a c"
+        "d d d d"
+        "e f f f"
+        "e g h i";
+        gap:0.8rem;
+        margin: 0 auto;
+        width: 90vw;
+}
+
+.tiles-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.tiles1 {
+    grid-area: a;
+}
+
+.tiles2 {
+    grid-area: b;
+}
+
+.tiles3 {
+    grid-area: c;
+}
+
+.tiles4 {
+    grid-area: d;
+}
+
+.tiles5 {
+    grid-area: e;
+}
+
+.tiles6 {
+    grid-area: f;
+}
+
+.tiles7 {
+    grid-area: g;
+}
+
+.tiles8 {
+    grid-area: h;
+}
+
+.tiles9 {
+    grid-area: i;
+}
+
+@media screen and (max-width:900px){
+    .tiles-container{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: none
+    }
+
+    .tiles-container>div{
+        grid-area: unset;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .tiles-container{
+        grid-template-columns: 1fr;
+    }
+}

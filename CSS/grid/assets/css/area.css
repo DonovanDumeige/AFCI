@@ -1,0 +1,37 @@
+body {
+    display: grid;
+    height:100vh;
+    /* Une autre manière de créer grid. Il faut nommer
+    chaque élémetde la grille avec grid-area et les répartir
+    avec grid-template-areas. Chaque guillemet représente
+    une ligne, chaque nom une cellule. Il doit y avoir
+    le même nombre de cellules par ligne. */
+    grid-template-areas: 
+    "header header header header header header"
+    "menu main main main aside aside"
+    "menu footer footer footer footer footer";
+}
+
+.item1 {
+    grid-area: header;
+    background-color: lightcyan;
+}
+
+.item2 {
+    grid-area: menu;
+    background-color: lightcoral;
+}
+
+.item3 {
+    grid-area: main;
+    background-color:lightgreen;
+}
+.item4 {
+    grid-area: aside;
+    background-color: lightyellow;
+}
+
+.item5 {
+    grid-area: footer;
+    background-color:lightpink;
+}

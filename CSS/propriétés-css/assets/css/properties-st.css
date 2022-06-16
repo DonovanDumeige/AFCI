@@ -1,0 +1,116 @@
+/* todo importer sa propre police d'écriture */
+@font-face {
+    /* font-face permet l'import d'une police 
+    d'écriture.*/
+    /* font-family permet de nommer cette police */
+    font-family: "Bebas";
+    /* indique le lien vers le fichier 
+    (absolu ou relatif) */
+    src: url("/propriétés-css/assets/Bebas_Neue/BebasNeue-Regular.ttf");
+}
+
+:root{
+    /* root permet d'indiquer des styles 
+    définis dans la racine à travers les variables */
+    --mainBgcolor:#ABCDEF;
+    --mainTextcolor:#e6b07b;
+    --divTextSize:0.8rem;
+}
+/* *les variables CSS permettent d'enregistrer une valeur
+* dans un nom que l'on pourra réutiliser à plusieurs
+* endroits du code.
+* Pour les utiliser, on indique la fonctionvar()
+* à laquelle on donnera le nom de la variable à afficher.
+* */
+/* les variables sont utiles pour implanter/modifier
+du style sur plusieurs éléments, très rapidement 
+*/
+/* -- permet de créer une variable */
+body{
+    background-color: lightgrey;
+}
+.target1{
+    background-color: rgb(102,114,175);
+    /* rgb prend 3 valeurs entre 0 et 255 représentant
+    la quantité de rouge, vert ou bleu */
+    color:rgb(255,255,255);
+    font-size: 20px;
+    font-family: Bebas;
+    /* pour utiliser une police importéen,il suffit
+    d'indiquer le nom défini auparavant */
+}
+
+.target2{
+    background-color: rgb(11, 94, 51);
+    color: hsl(280, 50%, 50%);
+    /* hsl est un cercle chromatique dont on indique
+    le degré de couleur en 1er paramètre, puis la 
+    saturation et la luminosité. */
+    font-size:2em;
+}
+.target3{
+    background-color: #000;
+    color: #9d8;
+        /* le code hexadécimal fait des décomptes par 16
+        de 0 à 9 puis de A à F pour 10 à 16. Une lettre 
+        substitue le nombre pour simplifier le code.
+        Les deux premiers caractères sont le rouge, les deux
+        suivants  le vert et les deux derniers, bleus.
+        Peut être raccourci en trois caractères.
+        */
+        font-size:2rem;
+    }
+.target4{
+    background-color: rgba(95, 7, 69, 0.5);
+    /* ajoute alpha à rgb ou hsl. Alpha correspond à 
+    l'opacité. */
+    color: rgba(255,255,255,1);
+    font-size:10vw;
+}
+
+.target5{
+    font-size:1cm;
+}
+
+.target6{
+    font-size:10vh;
+}
+
+.target7{
+    font-size:125%;
+}
+.target8{
+    font-size:9.5mm;
+    background-color:var(--mainBgcolor);
+    color:var(--mainTextcolor);
+    font-size:var(--divTextSize);
+    /* on invoque une variable avec var.
+    Il suffit de mettre le nom défini entre parenthèses  */
+}
+.target9{
+    font-size:à.3in;
+    background-color:var(--mainBgcolor);
+    color:var(--mainTextcolor)
+}
+/* 0010 */
+.target10{
+    font-size:1pc;
+    background-color:var(--mainBgcolor);
+    color:var(--mainTextcolor)
+}
+
+/* 0001 */
+div{
+    background-color: aquamarine;
+}
+/* 0011 */
+.target1 ~ div{
+    background-color: indianred;
+}
+/* todo Une classe a plus d'importance qu'un sélecteur
+todo en css, donc les éléments sélectionnés précédemment
+todo ne sont pas modifiés par le sélecteur */
+/* todo Plus on sera précis dans notre sélecteur,
+todo usant des parents, frères, id, classes, plus
+todo sa priorité sera grande. */
+

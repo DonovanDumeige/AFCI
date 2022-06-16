@@ -1,0 +1,25 @@
+input[type="button"]{
+   float:right;
+   margin-right:25px;
+}
+
+/* *manière alternative de center nav */
+nav{
+    position:relative;
+    left:120px;
+}
+
+@media screen and (min-width:750px){
+    input[type="button"]{
+        float:left; 
+     }
+     nav{
+         left:0;
+     }
+     nav li{
+         padding:20px;
+         display: inline-block;
+         font-size:1.5rem;
+         list-style-type: none;
+     }
+}

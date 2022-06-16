@@ -1,0 +1,25 @@
+/* Les fichiers scss qui commencent par un underscore s'appelle des partial 
+Ils ne sont pas traduits par le --watch*/
+// $li... va permettre de créer un tableau (une liste) de tous les paramètres donnés.
+@mixin liste($li...){
+    // Cette ligne permet de créer des boucles, ici on dit qsue pour une valeur rangée
+    // dans la variable $i qui commence à 0, on va répéter l'instruction suivante jusqu'à
+    // ce que $i atteigne la longueur de notre liste (ici 5 non inclus)
+    @for $i from 0 to length($li){
+    //@debug permet d'afficher un message ou une valeur dans le terminal. Ici la valeur de $i à chaque boucle.
+        //@debug $i;
+    //#{} permet d'afficher la valeur d'une variable dans le css.
+    // nth() permet de sélectionner l'élément d'une liste. Par exemple, à la 1ère répétition $i vaut 0*1 donc
+    // on affiche le 1er élément de notre liste (.truc1)
+        #{nth($li, $i+1)}{
+            font-size:30px + $i*10;
+        }
+    }
+    //@warn "Attention !"; permet d'afficher une alerte jaune dans le terminal.
+    //@error "Ne pas faire ça !"; permet d'arrêter la compilation et d'afficher un message d'erreur.
+}
+
+ul{
+    background-color: cornflowerblue;
+    @include liste(".truc1",".truc2",".truc3",".truc4",".truc5")
+}

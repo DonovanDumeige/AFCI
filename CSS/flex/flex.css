@@ -1,0 +1,54 @@
+/* *Flex définit un élément conteneur flexible
+* qui agit sur ses enfants */
+
+ul{
+    display:flex;
+    /* flex-direction indique l'axe principal.
+    Par défaut, c'est row (axe horizontal) on peut choisir
+    column (axe vertical).*/
+    /* indiquer reverse change l'ordre des éléments
+     sur l'axe choisi */
+    flex-direction: row;
+    /* aligner sur l'axe principal */
+    justify-content: space-between;
+    /* Indique si les éléments doivent tenir sur une même ligne
+    ou si ils peuvent s'étendre sur d'autres */
+    flex-wrap: wrap;
+    height:8rem;
+    /* aligner sur l'axe secondaire */
+    align-items:center;
+    border: 1px solid black;
+}
+
+li{
+    width:40vw;
+    border-radius:5px;
+    border: 1px solid rgba(0,0,0,.4);
+    background-color: brown;
+    color: white;
+    padding-left:5px;
+    margin: 10px;
+    flex-grow: 1;
+}
+
+li:hover{
+    flex-grow: 2;
+}
+
+section{
+    display:flex;
+    /* fusion de flex-direction et flex-wrap */
+    flex-flow: row nowrap;
+    /* width:200px; */
+}
+
+article{
+    display: flex;
+    width:40%;
+    background-color: aquamarine;
+}
+
+section article:nth-of-type(3){
+    background-color:lightskyblue;
+    order : -1;
+}

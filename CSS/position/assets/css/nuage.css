@@ -1,0 +1,57 @@
+body{
+    height:100vh;
+    background-image: linear-gradient(125deg,blue 1%,coral 88%);
+}
+
+
+/* .cloud{
+    width:15%;
+    margin:10% auto 0 auto;
+    position:relative;
+    top: 25%;
+}  */
+
+.cloud{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height:100%;
+    width:50%;
+}
+.cloud div{
+    width: 125px;
+    height:125px;
+    background-color:lightgoldenrodyellow;
+    border-radius:50%;
+    position: absolute; 
+}
+
+/* .cloud div:nth-child(1){
+    top:-45px;
+    left:-2%;
+}
+.cloud div:nth-child(2){
+    right: 30%;
+}
+    
+.cloud div:nth-child(3){
+    left:-20%;
+} */
+
+.cloud div:nth-child(1){
+    top:-5vh;
+}
+
+.cloud div:nth-child(2){
+    left:2.5vw;
+}
+
+.cloud div:nth-child(3){
+    left:-2.5vw;
+}
+
+*, ::before, ::after{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box
+}

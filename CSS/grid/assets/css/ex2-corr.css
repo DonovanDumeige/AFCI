@@ -1,0 +1,44 @@
+body{
+    padding: 0;
+    margin: 0;
+    height:100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+/* ***********CARDS ************ */
+.card-container{
+    padding: 4rem 0;
+    display: grid;
+    width:75vw;
+    margin:2rem auto;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    column-gap:2rem;
+}
+
+.card{
+    border:1px solid grey;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-rows: 3fr auto 1.2rem;
+}
+
+.card .info{
+    padding:1rem;
+}
+
+.card .footer{
+    background-color: grey;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
