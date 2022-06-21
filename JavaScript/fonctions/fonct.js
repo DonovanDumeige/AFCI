@@ -35,3 +35,88 @@ const s = {
 };
 s.salut();
 // On peut aussi ranger des fonctions dans un tableau, même si c'est peu utilisé
+
+let arr = [function(){console.log("test")}]
+arr[0]()
+
+function bonsoir(nom1){
+    if(nom1 == undefined){
+        // Afficher un message d'erreur dans la console
+        console.error("Donne moi un fichu argument !")
+    }
+    console.log("Bonsoir "+nom1);
+}
+/* JS accepte d'appeler une fonction qui attend des arguments, même sans
+lui en donner. Les arguments seront alors undefined
+*/
+bonsoir();
+// La fonction attendant un argument, on se doit de lui en donner un.
+bonsoir("agent 41");
+// Chaque nouvel argument doit être séparé d'une virgule.
+/* 
+Si on donne plus d'arguments que demandé, alors JS va juste
+ignorer les arguments supplémentaires.
+*/
+bonsoir("agent 007","Le Chiffre");
+
+function bonneNuit(nom1, nom2){
+    /*
+    bonus console.log : ajouter %c devant le premier argument et du css
+
+     */
+    console.log("%cBonne nuit "+nom1+" et "+nom2, "color:lightcoral; font-size:4rem;");
+}
+/* 
+Si une fonction attend plusieurs arguments, alors lors de l'appel, il faudra lui donner 
+plusieurs arguments séparés d'une virgule.
+La première valeur donnée ira dans le premier argument, la seconde dans le second etc. 
+*/
+bonneNuit("Michel","Augustin");
+
+function goodBye (nom1, nom2="les gueux"){
+    /* 
+    Il est possible de donner des valeurs par défaut à nos paramètres
+    dans ce cas, si on lui donne une valeur, alors il prendra cette valeur,
+    mais si on ne lui donne rien, alors il prendra sa valeur par défaut.
+    */
+    console.log("Good bye "+nom1+" et "+nom2);
+}
+// Affiche Kévin et les gueux
+goodBye("Kevin");
+//Affiche Kevin et Alain
+goodBye("Kevin", "Alain");
+
+function goodMorning(...noms){
+    /*
+    Le rest operator (...argument) permet de ranger tous les arguments donnés dans
+    un tableauu
+    */
+   // toString transforme un tableau en string en séparant les valeurs par des virgules
+    console.log("Good morning "+noms.toString(" "));
+    //join fera de même en séparant les valeurs par le string donné en arguments
+    console.log("Good morning "+noms.join(" et "));
+}
+goodMorning("Antoine", "Daniel", "Baghera", "Horty");
+
+function goodEvening(nom1,nom2,...noms){
+    console.log("Good Evening "+nom1+", "+nom2+" et "+ noms.toString());
+}
+goodEvening("Pierre", "Paul", "Jacques", "Karl")
+
+//--------------------------------- Retour sur forEach -------------------------
+let pr = ["Alice", "Ariel", "Mulan", "Belle"];
+/* 
+Certaines fonctions, comme forEach, prennent en argument une autre fonction.
+Par exemple forEach appelle la fonction donnée en argument, pour chaque élément 
+du tableau
+*/
+pr.forEach(el=>console.log(el)); // => fonction flechée
+pr.forEach(bonsoir);
+/*
+On appelle cela une fonction callback
+Cela peut être une fonction déclaré précédemment, comme une fonction directement 
+écrite entre les parenthèses de forEach. On parle alors de fonction anonyme.
+*/
+pr.forEach(function (princesse) {
+    console.log("Bienvenue "+princesse);
+})
