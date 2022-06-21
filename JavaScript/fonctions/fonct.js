@@ -120,3 +120,51 @@ Cela peut être une fonction déclaré précédemment, comme une fonction direct
 pr.forEach(function (princesse) {
     console.log("Bienvenue "+princesse);
 })
+
+//todo Quelques variantes d'écriture 
+
+// On peut réduire une fonction anonyme à une fonction flechée
+pr.forEach((princesse)=>{
+    console.log("Bienvenue "+princesse);
+})
+
+//si on a un seul argument, alors on peut même retirer les parenthèses
+pr.forEach(princesse=>{
+    console.log("Bienvenue "+princesse);
+})
+
+// si on a une seule instruction dans notre fonction, on peut retirer les accolades
+pr.forEach(princesse=>console.log("Bienvenue "+princesse));
+
+function compliment(salutation, nom){
+    // Ici ma fonction compliment prend en premier argument une fonction.
+    // on utilise le premier argument comme une fonction.
+    salutation(nom+" le magnifique");
+}
+//! Attention, quand on donne une fonction en callback, on lui donne juste le nom
+//! pas de parenthèses
+compliment(bonsoir, "Dio");
+compliment(nom=>console.log("Guttentag "+nom), "Hanz");
+
+function insulte(nom){
+    if(nom==undefined){
+        console.error("Donne moi un nom !");
+        // On peut ne rien donner à retourner pour simplement mettre fin à la fonction.
+        return;
+    }
+    // le mot clé return met fin à la fonction et renvoi ce qui lui est donné
+    return nom+" le gros bat";
+    // Cela ne s'affiche logiquement pas. Rien ne peut venir après un return, qui arrête la fonction.
+    console.log("COUCOU TOUT LE MONDE !");
+}
+// si j'appelle la fonction sans console.log, je ne verrai rien
+console.log(insulte("Ramsay"));
+/* Par contre, je peux la donner à un console.log ou a une variable
+pour récupérer l'information
+*/
+let z = insulte("Geoffrey");
+console.log(z);
+//si le return est vide, alors on obtiendra un undefined
+console.log(insulte());
+//notre fonction bonsoir ne retourne aucune information, donc elle retournera undefined
+console.log(bonsoir("Bill"));
