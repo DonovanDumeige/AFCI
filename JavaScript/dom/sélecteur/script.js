@@ -40,6 +40,38 @@ const li2 = document.querySelectorAll ("footer li");
 //!  Attention certaines fonctions qui pourraient marcher sur NodeList pourraient ne pas fonctionner sur HTMLCollection
 console.log(li2);
 
+const header = document.querySelector('header');
+/*
+On peut sélectionner un élément HTML à l'intérieur d'un autre plutôt que
+dans tout le document.
+*/
+const h = header.querySelector('h1');
+console.log(h);
+
+// Récupère l'élément frère suivant mon header (ici main)
+console.log(header.nextElementSibling);
+// Récupère le frère suivant peu importante si c'est un élément html ou non (ici un "\n")
+// \n équivaut à un saut de ligne
+console.log(header.nextSibling);
+
+// même chose mais avec le frère précédent.
+console.log(li2[2].previousElementSibling);
+console.log(li2[2].previousSibling);
+
+//récupère l'élément HTML parent
+console.log(header.parentElement);
+// Sélectionne le parent le plus proche qui correspond à mon sélecteur css
+console.log(li2[0].closest("footer"));
+
+// Donne la liste des éléments HTML enfants.
+console.log(header.children);
+
+// retire l'élément sélectionné.
+// h.remove();
+
+// retire l'élément sélectionné qui se trouve dans ce parent.
+header.removeChild(h);
+/*
 // ------------------- EXO 1 ------------------------
 //Déplacer la modale dans le body
 
