@@ -1,0 +1,111 @@
+body{
+    min-height: 100vh;
+    max-width: 100vw;
+    background-image: radial-gradient(circle, rgba(17,129,102,1) 21%,
+    rgba(4,108,73,1) 59%,
+    rgba(0,62,32,1) 100%);
+}
+.container{
+    width: 90%;
+    height : 95%;
+    margin : 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap : 50px;
+    perspective: 2000px;
+    perspective-origin: top;
+}
+
+.card-wrapper{
+    position: relative;
+    perspective: 2000px;
+    perspective-origin: top;
+    .reveal{
+        transform: rotateY(180deg);
+        }
+    .card{
+        width : 200px;
+        height: 280px;
+        position: relative;
+        left:40%;
+        margin-top: 1.5rem;
+        transform-style: preserve-3d;
+        transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+        .recto, .verso{
+            position:absolute;
+            border-radius: 15px;
+            width: 100%;
+            height:100%;
+            backface-visibility: hidden;
+        }
+        .recto{
+            background-color: lightblue;
+            border: 6px solid brown;
+            transform: rotateY(180deg); 
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap : 30px;
+            span{
+                font-size:5rem;
+                font-weight: bolder;
+                font-family: Arial, Helvetica, sans-serif;
+                color: steelblue;
+                position: relative;
+            }
+            .restart{
+                width : 125px;
+                height:40px;
+                font-size:0.8rem;
+                position: relative;
+            }
+        }
+        .verso{
+            background-color: lightgrey;
+            border: 6px solid brown;
+            background-image: linear-gradient(135deg, #b85353 16.67%, #eb9f9b 16.67%, #eb9f9b 33.33%, #edc0c0 33.33%, #edc0c0 50%, #b85353 50%, #b85353 66.67%, #eb9f9b 66.67%, #eb9f9b 83.33%, #edc0c0 83.33%, #edc0c0 100%);
+            background-size: 84.85px 84.85px;
+            font-size: 2rem;
+            color: grey;
+        } 
+    }
+    
+}
+
+
+
+
+.text{
+    p{
+        text-align: center;
+        font-size: 2rem;
+    } 
+}
+
+.guess{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    input, .button{
+        position:relative;
+    }
+    input{
+        width: 5%;
+        height : 40px;
+        position: relative;
+        left:44%;
+        font-size: 2rem;
+    }
+    .button{
+        width: 200px;
+        height: 35px;
+        font-size:1.5rem;
+        left:39%;
+        border-radius: 10px;
+        color: rgba(0,62,32,1);
+        border: 2px solid rgba(0,62,32,1);
+        cursor:pointer
+    }
+}

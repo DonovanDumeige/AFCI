@@ -1,0 +1,33 @@
+$bgColor:grey;
+$mainColor:orangered;
+$rotate-180:rotateY(180deg);
+$transition: all 0.5s linear;
+
+@mixin reset {
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+@mixin size($w, $h){
+    width: $w;
+    height:$h;
+}
+
+@mixin border-radius ($border-r){
+    border-radius: $border-r;
+}
+
+@mixin flex-flow ($dir:row, $wrap:wrap){
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+}
+
+@mixin flex-align ($jc:flex-start, $ai:flex-start){
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin gap($gap){
+    gap:$gap;
+}
+
