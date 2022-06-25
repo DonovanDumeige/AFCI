@@ -1,0 +1,48 @@
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url(./fond.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.guessarea {
+  display: flex;
+  gap: 20px;
+}
+.guessarea button {
+  background-color: lightcoral;
+  color: white;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px lightpink;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+.guessarea button:hover {
+  color: lightcoral;
+  background-color: antiquewhite;
+}
+
+.answerarea {
+  border: 5px solid darkgreen;
+  width: 500px;
+  aspect-ratio: 16/6;
+}
+.answerarea p {
+  margin-left: 15px;
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: darkgreen;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

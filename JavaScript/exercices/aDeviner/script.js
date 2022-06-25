@@ -33,8 +33,7 @@ faire que la révélation du nombre et du bouton se fasse avec
 une carte qui se retourne.
 */
 
-//----------- ETAPE 1 : faire deviner un chiffre ------------
-
+// Ma solution avec les fonctions en s'aidant de l'exemple de Nolwenn
 
 //let nb = parseInt(prompt("Donnez moi un chiffre entre 0 et 100"))
 let guess, turn;
@@ -47,7 +46,7 @@ const
     btn = document.querySelector('.guess .button');
     answer = recto.querySelector('span'),
     restart = document.querySelector('.restart');
-
+console.log(recto);
 function start() {
     turn = 7;
     guess = Math.floor(Math.random() * 100);
@@ -71,7 +70,16 @@ function endOfGame(win) {
 }
 
 function check(){
-    let nb = parseInt(input.value)
+    let nb = parseInt(input.value);
+    console.log(nb);
+    if (isNaN(nb)) {
+        text.textContent = 'Veuillez entre un nombre'
+        return; // rappel : return met fin à la fonction 
+    }
+    if (nb<0 || nb>100) {
+        text.textContent= 'Veuillez donner un nombre entre 0 et 100';
+        return;
+    }
     turn--;
     if(nb === guess){
         endOfGame(true);
@@ -89,7 +97,7 @@ start();
 
 restart.addEventListener("click", start);
 btn.addEventListener("click", check);
-input.addEventListener("keydown", (e)=>{
+input.addEventListener("keyup", (e)=>{
     if(e.key == "Enter"){ check()}
 });
 
@@ -125,10 +133,3 @@ input.addEventListener("keydown", (e)=>{
         };
     };
 }); */
-
-
-// ------------------- ETAPE 2 ---------------
-// ------------------- ETAPE 3 ---------------
-// ------------------- ETAPE 4 ---------------
-// ------------------- ETAPE 5 ---------------
-// ------------------- ETAPE 6 ---------------
