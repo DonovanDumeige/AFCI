@@ -40,9 +40,9 @@ function end(win) {
 
 // c'est parce que j'ai mis le paramètre Bravo que j'ai pu ensuite récupérer la valeur 
 // du bouton cliqué.
-function game(Bravo) {
+function game(bravo) {
     start();
-    player = Bravo.target.textContent;
+    player = bravo.target.textContent;
     // obligé de comparer les valeurs sinon cela ne fonctionne pas
     if ((player == "Pierre" && ia =="Ciseaux") || (player =="Feuille" && ia == "Pierre") || (player == "Ciseaux" && ia == "Feuille")) {
         end(true)
@@ -63,5 +63,9 @@ btn.forEach(function(e){
     e.addEventListener("click", game);
 })
 
+
+/*
+Une correction possible à : https://codepen.io/phillux700/pen/xXqpeP
+*/
 // longue version pour que le cas où player et ia ont la même version
 /* (player == "Pierre" && ia =="Pierre") || (player =="Feuille" && ia == "Feuille") || (player == "Ciseaux" && ia == "Ciseaux") */

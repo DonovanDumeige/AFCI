@@ -1,0 +1,60 @@
+*, ::before, ::after{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box
+}
+
+body{
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+header{
+    background-color: cadetblue;
+    text-align: center;
+    color: antiquewhite;
+    height : 50px;
+    line-height: 50px;
+}
+main{
+    background-color: darksalmon;
+}
+footer{
+    background-color: lightyellow;
+    text-align: center;
+}
+
+time{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    font-family: monospace;
+    color: brown;
+}
+
+button{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 125px;
+    height : 40px;
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+.bar{
+    height:30px;
+    position:relative;
+    width: 100%;
+    background-color: lightgrey;
+}
+
+.progress{
+    background-color: brown;
+    width:0;
+    height: 100%;
+    position: absolute;
+}

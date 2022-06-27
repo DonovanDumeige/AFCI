@@ -28,7 +28,7 @@ salut2();
 const salut3 = ()=> {
     console.log("Coucou tout le monde");
 }
-salut3()
+salut3();
 // Je peux aussi avoir des fonctions rangées dans des objets
 const s = {
     salut: ()=> console.log("Salutations tout le monde")
@@ -89,7 +89,7 @@ goodBye("Kevin", "Alain");
 function goodMorning(...noms){
     /*
     Le rest operator (...argument) permet de ranger tous les arguments donnés dans
-    un tableauu
+    un tableau
     */
    // toString transforme un tableau en string en séparant les valeurs par des virgules
     console.log("Good morning "+noms.toString(" "));
