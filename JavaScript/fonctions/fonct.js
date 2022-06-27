@@ -102,7 +102,6 @@ function goodEvening(nom1,nom2,...noms){
     console.log("Good Evening "+nom1+", "+nom2+" et "+ noms.toString());
 }
 goodEvening("Pierre", "Paul", "Jacques", "Karl")
-
 //--------------------------------- Retour sur forEach -------------------------
 let pr = ["Alice", "Ariel", "Mulan", "Belle"];
 /* 
