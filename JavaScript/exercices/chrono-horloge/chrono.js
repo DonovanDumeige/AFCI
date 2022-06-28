@@ -29,12 +29,13 @@ function appear (){
 btn.addEventListener("click", appear);
 
 input.addEventListener("input",(e)=>{
-    span.textContent = e.target.value;
+    span.textContent =parsInt(e.target.value);
+    console.log(span.textContent);
 })
 
 let t = span.innerHTML
 console.log(t);
-function timer() {
+function timer(e) {
     
     t--
     span.textContent = t
@@ -43,3 +44,6 @@ function timer() {
 
 start.addEventListener("click", timer)
 console.log(start);
+
+let time = new Date();
+console.log(time);
