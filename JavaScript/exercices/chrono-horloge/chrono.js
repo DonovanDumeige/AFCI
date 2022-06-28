@@ -22,28 +22,47 @@ reset.textContent = "Reset"
 main.append(div)
 div.style.display = "none"
 
+// Rappel de ce que je dois faire
+// 1. Indiquer un temps dans mon input
+// 2. Afficher ce temps
+// 3. Faire arriver ce temps à 0
+// Le bouton start démarre le timer
+// Le bouton reset réinitialise ce timer
+
+
+// Faire apparaitre/disparaitre le bloc du minuteur
 function appear (){
-    div.style.display = "flex"
+    if (div.style.display == 'flex') {
+        div.style.display = 'none'
+    } else{
+        div.style.display = "flex"
+    }
+    
 }
 
 btn.addEventListener("click", appear);
 
-input.addEventListener("input",(e)=>{
-    span.textContent =parsInt(e.target.value);
-    console.log(span.textContent);
-})
+// Récupère la valeur de input mais je ne sais pas l'exploiter
 
-let t = span.innerHTML
-console.log(t);
-function timer(e) {
-    
-    t--
-    span.textContent = t
-    setInterval(timer,1000)
+
+function recup (e){
+    span.textContent = input.value;
 }
 
-start.addEventListener("click", timer)
-console.log(start);
+input.addEventListener("input",()=>{
+    span.textContent =input.value;
+    let t = input.value.split(':')
+    let s = t[1];
+    let m = t[0];
+    function timer() {
+        s--
+        if (s<0){
+            s=59
+            m--
+        }
+        span.textContent =  `${m} : 0${s}`
+}
+})
 
-let time = new Date();
-console.log(time);
+start.addEventListener("click", timer) 
+setInterval(timer,1000)

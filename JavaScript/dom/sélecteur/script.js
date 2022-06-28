@@ -105,6 +105,6 @@ function pChange(pc) {
 const paras = document.querySelectorAll(".step")
 for (let i=0;paras.lenght; i++){
     if (i%2 !=0)
-    textChance(paras2[i])
+    textChange(paras2[i])
 }
 */
