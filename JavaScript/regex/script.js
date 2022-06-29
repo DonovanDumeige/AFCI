@@ -35,7 +35,7 @@ const r7 = /[^a-z]/;
 console.log(r7, r7.test("bonjour"), r7.test("0698512100"));
 
 const r8 = /ou?/;
-//vérifie que les caractères précédent apparaissent 0 fois ou plus
+//vérifie que les caractères précédent apparaissent 0 fois ou 1 fois
 // mais au moins un doit apparaitre.
 console.log(r8, r8.test("bonjour"), r8.test("objet"), r8.test("pizza"));
 
@@ -44,7 +44,7 @@ const r9 = /ou+/;
 console.log(r9, r9.test("bonjour"), r9.test("objet"), r9.test("pizza"));
 
 const r10 = /ou*/;
-//vérifie que les caractères précédents apparaissent une 0 fois plus
+//vérifie que les caractères précédents apparaissent une 0 fois ou plus
 //mais au moins un doit apparaitre
 console.log(r10, r10.test("bonjour"), r10.test("objet"), r10.test("pizza"));
 
@@ -79,3 +79,81 @@ const r17 = /\d/;
 console.log(r17, r17.test("Coucou 8 fois"), r17.test("bonjouur"));
 
 
+// ---------------------------------- match -------------------------------------
+const phrase ="J'aime la pizza, les cannelés et les okonomiyaki";
+
+/* match me retourne un tableau correspondant aux éléments trouvé par ma regex
+dans ma chaine de caractères */
+console.log(phrase.match(/pizza/));
+
+//Par défaut, ma regex s'arrête au premier élément retrouvé
+console.log(phrase.match(/les/));
+
+// mais en lui rajoutant le flag "g", elle cherchera tous les éléments qui correspondent.
+//les flags s'ajoutent après la fermeture de la regex/
+console.log(phrase.match(/les/g));
+
+const phrase2 = "Vive les regex et vive javascript !";
+
+// Par défaut notre regex est sensible à la casse. 
+console.log(phrase2.match(/vive/g));
+
+// Avec le flag i, la regex va ignorer la casse.
+console.log(phrase2.match(/vive/gi));
+
+// --------------------------------------------- replace ----------------------------------
+
+/* 
+replace retourne le string en remplaçant l'élément en premier paramètre par 
+celui en second paramètre
+*/
+// Il peut être utilisé avec un string
+console.log(phrase.replace("pizza", "salade")); 
+
+//comme avec une regex
+console.log(phrase.replace(/pizza/, "salade"));
+
+/* 
+L'avantage de la regex c'est que l'on pourra lui faire remplacer plusieurs éléments
+et lui dire que cela importe peu si il y a des majuscules ou non.
+ */
+console.log(phrase2.replace(/salade|cannelés|okonomiyaki/gi, "*********"));
+console.log(phrase2.replace(/regex|javascript/gi, "*********")); 
+
+// $& permet de ne pas remplacer le mot recherché mais plutôt d'ajouter du contenu à sa suite.
+console.log(phrase2.replace(/javascript/gi, "$& et CSS")); 
+console.log(phrase2.replace(/regex/gi, "'$&' (c'est faux)")); 
+
+// ------------------- flag bonus -----------------------
+const phrase3 = `1er : Maurice
+2ème : Paul
+3ème : Charlie`;
+
+/* Ici même si il doit retourner tous les résultats, on lui indique
+un string qui commence par un chiffre, donc seul le 1 est pris en compte.
+*/
+console.log(phrase3.match(/^\d/g));
+/*
+Avec le flag "m" pour multiple, il va prendre en compte que les sauts à la ligne
+sont comptés comme de nouvelles phrases.
+*/
+console.log(phrase3.match(/^\d/gm));
+
+//Cela fonctionne aussi avec "$" pour fin de string
+console.log(phrase3.match(/[a-z]$/gm));
+
+// \w recherche des lettres
+
+console.log(phrase3.match(/(\w+)$/gm));
+
+//! Toute lettre accentuée nest pas compris dans [a-z]
+console.log(/^[a-z]+$/.test("paul"));
+console.log(/^[a-z]+$/.test("élodie"));
+// pour accepter des accents, il va falloir les écrire un à un.
+console.log(/^[a-zé]+$/.test("élodie"));
+
+// "." correspond à n'importe quel caractère.
+console.log(phrase.match(/pizza.+cannelé/));
+// sauf pour les sauts à la ligne.
+// le flag "s" permet de prendre en compte les sauts à la ligne.
+console.log(phrase3.match(/1.+3/s));
