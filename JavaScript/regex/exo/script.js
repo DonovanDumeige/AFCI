@@ -41,21 +41,13 @@ user.addEventListener("keyup", (e)=>{
 tel.addEventListener("change", (e)=>{
     check()
 });
-function check() {
-    let n = /^[a-z-_]+$/;
-    let t= /^0\d[0-9]{8}$|^\+33\d{9}$|^0\d([ .]?\d{2}){4}$|^\+33\s\d([ .]?\d{2}){4}$/
-    if(!n.test(user.value)){
-        user.style.backgroundColor = "rgba(255, 0, 0,.5)";
+function check(e) {
+    let r
+    switch(e.target.id){
+        case "user":
+            r=/^[a-z-_]+$/;
+            break;
+        case "telephone":
+            r = /^0\d[0-9]{8}$|^\+33\d{9}$|^0\d([ .]?\d{2}){4}$|^\+33\s\d([ .]?\d{2}){4}$/;
     }
-    
-     if(!t.test(tel.value)){
-        tel.style.backgroundColor = "rgba(255, 0, 0,.5)";
-    } 
-    console.log(t.test(tel.value)); 
 }
-/* 2.Le champ téléphone doit passer au rouge si le ce qui est entré
-ne correspond pas à un numéro de téléphone.
-*/
-
-/*      */
-    
