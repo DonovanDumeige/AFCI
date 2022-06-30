@@ -10,12 +10,19 @@ options = {
     à celui-ci.
     */
     // root: main
+
     /* rootMargin permet d'étendre ou réduire la zone de détection.
     avec un nombre positif, la détectio sera hors de l'écran
     avec un nombre négatif, elle se fera dans une zone réduite de l'écran
     Que ce soit pour l'entrée ou la sortie de l'élément. */
     
-    rootMargin : "200px"
+    //rootMargin : "200px";
+
+    /* 
+    threshold indique via un chiffre entre 0 et 1, combien de pourcentages
+    de l'élément doit être visible pour lancer l'évènement
+    */
+    threshold: 0.03
 },
 /*
 L'intersection Observer est un objet qui prend une fonction
@@ -35,7 +42,6 @@ function setIndicator(entries){
     entre ou sort de l'écran.
     */
     let entry =  entries[0]
-    console.log(entry);
     /* On trouvera dabs cet objet tout un tas d'informations utiles :
     target => pareil qu'avec les évènement, c'est la cible qui a été intersectée
     (entrée dans le viewport)
@@ -55,7 +61,6 @@ function setIndicator(entries){
 }
 function indicatorAnimation() {
     // scrollY représente combien de pixel on a scroll
-    console.log(main.offsetTop);
     if (window.scrollY > main.offsetTop) {
         // scrollHeight représente la hauteur de l'élément incluant le padding vertical
         // .toFixed retourne un string correspondant à notre nombre avec "n" chiffres après la virgule
@@ -81,3 +86,6 @@ observer.disconnect();
 Chaque observer étant lié à une fonction, si on veut lancer des observations
 au fonctionnement totalement différent, il vaudra mieux créer un nouvel observer
 */
+
+// resizeObserver vérifie si la taille a été modifiée
+//mutationObserver vérifie si le DOM a été modifié
