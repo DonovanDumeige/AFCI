@@ -1,6 +1,7 @@
 "use strict";
 
 const dark = document.querySelector("#darkTheme");
+const lis = document.querySelectorAll('.navbar li');
 let r,g,b;
 
 dark.addEventListener("input", changeTheme2);
@@ -17,6 +18,8 @@ function changeTheme2() {
         localStorage.setItem("theme", "dark")
         document.documentElement.style.setProperty("--fond", "#333");
         document.documentElement.style.setProperty("--text", "antiquewhite");
+
+
     } else{
         localStorage.setItem("theme","light")
         document.documentElement.style.setProperty("--fond", "antiquewhite");

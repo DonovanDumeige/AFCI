@@ -1,0 +1,112 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color:black;
+    background-color: white;
+}
+header{
+    display: flex;
+}
+h1{
+    text-align: center;
+}
+main{
+    padding: 20px 10%;
+}
+main p{
+    text-align: justify;
+}
+.navbar{
+    min-width : 50vw;
+    position:absolute;
+    right:0;
+    margin-right: 3rem;
+}
+.navbar ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    flex-grow: 1;
+    
+}
+.navbar li{
+    list-style-type: none;
+    padding: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+.navbar li a{
+    text-decoration: none;
+    color: brown;
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input{
+    display: none;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition-duration: 0.4s;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition-duration: 0.4s;
+}
+input:checked + .slider{
+    background-color: black;
+}
+input:focus + .slider{
+    box-shadow: 0 0 1px black;
+}
+input:checked + .slider::before{
+    transform: translateX(26px);
+}
+.slider.round{
+    border-radius: 34px;
+}
+.slider.round::before{
+    border-radius: 50%;
+}
+
+
+/* Ces média queries se déclenchent selon le thème du 
+navigateur ou le l'OS. (window, mac...) */
+
+/* @media (prefers-color-scheme: dark) {
+    body{
+        background-color: #333;
+        color: #ccc;
+    }
+} */
+
+
+/* 
+Tous les éléments HTML se trouvant dans le body, ajouter ou retire une classe 
+du body permettra de changer tout le thème.
+ */
+body.dark{
+    background-color: #333;
+    color: #ccc;
+}
