@@ -11,5 +11,34 @@
  * 6. éditer la liste lorsque l'on coche ou supprime un élément.
  */
 
-let todo = document.querySelector('#todo');
+let todo = document.querySelector('#todo'),
+ul = document.createElement('ul');
 const add = document.querySelector('#add');
+
+
+add.addEventListener("click", subTask) 
+
+function subTask(e) {
+    e.preventDefault(); 
+    let li = document.createElement('li')
+    li.textContent=todo.value;
+    if (li.textContent = ""||" ") {
+        alert("Veuillez remplir ce champ")
+        todo.value=""
+    } else {
+        li.classList.add('task')
+        li.style.display = "block";
+        let span = document.createElement ('span')
+        span.textContent='x'
+        span.style.display="inline-block"
+        ul.append(li);
+        li.append(span)
+        document.body.append(ul);  
+        span.addEventListener("click", ()=>{li.style.display = "none";})
+        li.addEventListener("click", ()=> li.style.textDecoration = "line-through")
+        todo.value=""
+    }
+}
+
+
+
