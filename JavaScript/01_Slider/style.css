@@ -6,18 +6,70 @@
 
 body{
     width :100vw;
-    height : 100vh;
+    height:100vh;
 }
 .slides-container{
     width : 85%;
     height : 95%;
     margin: auto auto;
     position : relative;
-    top:2.5%;
-    bottom:0;
     background-color: aliceblue;
+    top : 2.5%;
+    bottom : 0;
+}
+.before{
+    position : absolute;
+    top : 290px;
+    left : 205px;
+}
+.after{
+    position : absolute;
+    top : 290px;
+    right : 148px;
 }
 
+.before, .after{
+    color: grey;
+    width : 70px;
+    height : 70px;
+    z-index: 1;
+    text-align: center;
+    font-size:2.5rem;
+    line-height: 70px;
+}
+.before:hover, .after:hover{
+    color:brown
+}
 .slide{
-    position: absolute;
+/*     position: absolute;
+    top: 120px;
+    bottom:0;
+    right: 0;
+    left:170px; */
+    transform: translate(12.5%);
+    margin :auto 0;
+}
+
+
+.buttons{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap : 20px;
+}
+
+.button{
+    width: 16px;
+    height : 16px;
+    border-radius: 50%;
+    border : 1px transparent;
+    background-color: grey;
+    
+}
+
+.button:hover{
+    background-color: brown;
+    border-color : grey;
+
 }
