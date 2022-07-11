@@ -1,0 +1,23 @@
+*, ::before, ::after{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box
+}
+
+body{
+    width :100vw;
+    height : 100vh;
+}
+.slides-container{
+    width : 85%;
+    height : 95%;
+    margin: auto auto;
+    position : relative;
+    top:2.5%;
+    bottom:0;
+    background-color: aliceblue;
+}
+
+.slide{
+    position: absolute;
+}

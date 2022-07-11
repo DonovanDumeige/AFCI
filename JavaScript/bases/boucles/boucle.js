@@ -1,4 +1,4 @@
-"use strict"
+ "use strict"
 // ----------------------------- WHILE --------------------
 //* While est l'équivalent de Tant que
 
