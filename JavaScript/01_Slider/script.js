@@ -3,6 +3,7 @@ let slideIndex = 0;
 let slides = document.querySelectorAll('.slide');
 let prev = document.querySelector(".slides-container .before");
 let next = document.querySelector(".slides-container .after")
+let pos = 
 console.log(prev, next);
 //Cacher les images du slider
 function hideSlide(){
