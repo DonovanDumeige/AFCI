@@ -39,11 +39,9 @@ function showSlide(index){
 
     //Afficher la nouvelle slide
     slides[slideIndex].style.display = "block";
-
-    
 }
 
-prev.addEventListener("click",PrevSlide);
+/* prev.addEventListener("click",PrevSlide);
 next.addEventListener("click", NextSlide);
 
 //Obtenir l'élément précédent
@@ -52,4 +50,4 @@ function PrevSlide(){
     showSlide(index)
 }
 
-function NextSlide();
+function NextSlide(); */
