@@ -14,4 +14,7 @@ g.start();
 console.log(g.guess);
 console.log(g.turn);
 
-
+import d from "./paint-v2.js"
+const drawing = d.create();
+document.body.append(drawing);
+d.init();

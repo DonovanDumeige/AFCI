@@ -23,9 +23,9 @@ const game = {
         div.style.flexDirection = "column";
         div.style.alignItems = "center";
         div.append(this.p, this.input, this.btn)
-        this.input.addEventListener("keyup", (e)=>{
+        this.input.addEventListener("keyup", e =>{
             if(e.key == "Enter"){
-                this.check
+                this.check.bind(this)
             }
         })
         this.btn.addEventListener("click", this.check.bind(this));
