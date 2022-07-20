@@ -74,7 +74,7 @@ function indicatorAnimation() {
 }
 /* 
 On peut arrêter l'observation d'un élément avec :
-variableObserver(élément observé)
+variableObserver.unobserve(élément observé)
 Ici ça donnerait :
 observer.unobserve(main);
 
