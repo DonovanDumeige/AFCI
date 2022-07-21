@@ -24,7 +24,9 @@
          console.log(this)
          return canvas;
      }
-     randomizer();{
-        this.x = Math.floor(Math.random()*innerWidth)
+     randomizer(){
+        this.x = Math.floor(Math.random()*innerWidth);
+        this.y = Math.floor(Math.random()*innerHeight);
+        this.w, this.y = Math.floor(Math.random)
      }
  }
