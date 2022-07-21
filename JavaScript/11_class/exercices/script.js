@@ -4,33 +4,27 @@
  * ----------------------- EXO 1 -------------------------------------
  * Créer une classe facilitant l'usage du DOM.
  */
-import e from "./EasyDom.js";
-const easy = new e();
+// Voir correction
 
-const span = easy.select("span");
-const div = easy.select("div");
-easy.tag("div", {class:"truc bidule machin", id: "chaussettes"})
-//console.log(div);
-console.log(span)
-easy.event(span, "click", (e)=>{console.log(e);})
-easy.event(div, "click", (e)=>{console.log(e);})
-
-/* 
-const div = easy.tag("div", {class:"truc bidule machin"}, id: "chaussettes")
-console.log(div);
-const span = easy.select("span");
-console.log(span)
-easy.event(span, "click", (e)=>{console.log(e);})
-easy.event(div, "click", (e)=>{console.log(e);})
-*/
-/**
- * ----------------------- EXO 2 -------------------------------------
+/** ----------------------- EXO 2 -------------------------------------
  * Adapter le code du carousel en class.
  */
+
+
 /**
  * ----------------------- EXO 3 -----------------------------------
  * Faire une version du carousel qui hérite de EasyDom et l'utilise.
  */
+
+
+import c from "./carousel-extends.js"
+const carousel = new c(["./img/fond1.jpg","./img/fond2.jpg","./img/fond4.jpg", "./img/fond5.jpg"]);
+document.body.append(carousel.container);
+carousel.init();
+
+
+
+
 /**
  * ----------------------- EXO 4 -------------------------------
  * Faite une page avec un canvas, à chaque clique sur le canvas, 

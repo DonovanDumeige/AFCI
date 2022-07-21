@@ -29,7 +29,9 @@ export default class Human {
      * @param {string} nom 
      * @param {string|number} age 
      */
-    constructor(prenom, nom, age) {
+    constructor(prenom, nom, age) { 
+    //todo pour rappel le constructeur est la première fonction qui sera appelé lorsqu'à l'import
+    //todo on fait variable = new constructor();
     /* 
     Les propriétés peuvent être déclarées mais n'ont pas besoin de l'être au préalable.
     Exception faite des propîétés privées qui doivent être déclarées avant.

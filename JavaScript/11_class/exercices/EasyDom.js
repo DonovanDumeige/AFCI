@@ -34,14 +34,10 @@ export default class EasyDom{
     
         // Si balise est une instance HTML
         if(instance){
-            this.balises.addEventListener(evenement, fonction)
+            balise.addEventListener(evenement, fonction)
         } else{
-            balise.forEach(()=>{
-                this.balises = document.createElement(balise)
-                this.balises.textContent = "Je suis généré par JS !"
-                this.balises.style.border = "1px solid black"
-                this.balises.addEventListener(evenement, fonction)
-                document.body.append(this.balises)
+            balise.forEach(b=>{
+                b.addEventListener(evenement, fonction)
             })
         } 
     } 
