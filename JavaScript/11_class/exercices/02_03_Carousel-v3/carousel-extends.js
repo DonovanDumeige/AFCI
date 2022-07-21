@@ -1,6 +1,6 @@
 'use strict'
 
-import EasyDom from "./corrections/easyDom-corr.js";
+import EasyDom from "./EasyDom.js";
 const c = new EasyDom();
 export default class carousel extends EasyDom {
     btns = [];

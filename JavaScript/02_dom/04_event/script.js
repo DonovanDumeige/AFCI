@@ -33,15 +33,7 @@ Un évènement peut aussi être ajouté avec on...nomDel'évènement (onclick, o
 Seulement étant un attribut qui prend une fonction comme valeur, si on tente d'en ajouter
 plusieurs, cela remplacera les précédents.
 */
-menu1.onclick = test;
-menu1.onclick = (e)=>{ 
-    if(e.target.style.fontSize == "2rem"){
-        e.target.style.fontSize = "1rem";
-    } else {
-        e.target.style.fontSize = "2rem";
-    }
-    
-};
+é
 // Une troisième façon  existe pour ajouter un évènement, voir le .html du event
 
 /*
