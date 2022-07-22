@@ -39,7 +39,7 @@ On ouvre la requête, on lui indique quelle type de requête lancer
 en premier paramètre. 
 En second, on lui donne l'adresse du fichier ou
 site auquel on souhaite accéder.
-En troisième, si la reu^qete doit être asynchrone ou non.
+En troisième, si la requête doit être asynchrone ou non.
         Une requête asynchrone se fera pendant que JS peut éxécuter d'autres choses
         alors que en non-asynchrone, JS bloquera son éxécution jusqu'à la fin de
         la requête.

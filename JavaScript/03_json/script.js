@@ -9,7 +9,7 @@ function saveData(e) {
     // cela permet d'éviter le rechargement de la page.
     e.preventDefault(); 
 
-    //Je transfère les donénes de mon formulaire à l'objet FormData
+    //Je transfère les données de mon formulaire à l'objet FormData
     const data = new FormData (form);
     //Je déclare un objet vide
     let user = {};
