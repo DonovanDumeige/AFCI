@@ -95,7 +95,7 @@ const keyframes = new KeyframeEffect(
     div, [{transform:"translate(0,0)"}, {transform: "translate(100%, 50%)"}],
 {duration:3000, fill:"forwards"}
 );
-/* Animation prend en premier arguùent l'objet KeyFrameEffect et en second sur
+/* Animation prend en premier argument l'objet KeyFrameEffect et en second sur
 quel timeline il doit se baser (généralement, celle du document). */
 const anime5 = new Animation(keyframes, document.timeline);
 async function animation5() {
