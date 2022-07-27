@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target":"ES2022", 
+        "noEmitOnError": true, // optionnel mais conseillé
+        "strict": true // optionnel
+    },
+    "files": [
+        "assets/02-syntaxe.ts",
+        "assets/03-mini-exo.ts"
+    ]
+}
