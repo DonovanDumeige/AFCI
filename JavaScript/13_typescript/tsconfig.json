@@ -7,6 +7,11 @@
     },
     "files": [
         "assets/02-syntaxe.ts",
-        "assets/03-mini-exo.ts"
+        "assets/03-mini-exo.ts",
+        "assets/04-narrowing.ts",
+        "assets/05-alias.ts",
+        "assets/06-classes.ts",
+        "assets/07-interfaces.ts",
+        "assets/08-enum.ts"
     ]
 }
